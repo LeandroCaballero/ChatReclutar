@@ -3,20 +3,22 @@ const http = require('http')
 const socketio = require('socket.io')
 const router = require('./routes/chat')
 
+const { addUsers, removeUsers, getUser, getUsersInRoom } = require("./users")
+
 const PORT = process.env.PORT || 4000
 
 const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
 
-io.on('connection', (socket) =>{
+io.on('connection', (socket) => {
     console.log("Se conecto alguien")
 
-    socket.on('join', ({nombre, sala}) =>{
+    socket.on('join', ({ nombre, sala }) => {
         console.log(nombre, sala)
     })
 
-    socket.on('disconnect', ()=>{
+    socket.on('disconnect', () => {
         console.log("Alguien se fue")
     })
 })
