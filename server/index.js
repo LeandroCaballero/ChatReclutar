@@ -11,6 +11,11 @@ const io = socketio(server)
 
 io.on('connection', (socket) =>{
     console.log("Se conecto alguien")
+
+    socket.on('join', ({nombre, sala}) =>{
+        console.log(nombre, sala)
+    })
+
     socket.on('disconnect', ()=>{
         console.log("Alguien se fue")
     })
