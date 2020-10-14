@@ -23,7 +23,7 @@ const Chat = () => {
         })
 
         return () => {   //equivalente al componentDidUnmount
-            socket.emit('desconnection')
+            socket.emit('disconnect')
             socket.off()
         }
     }, [HOST]) //solo se vuelve a renderizar si cambia el HOST

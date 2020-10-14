@@ -1,12 +1,13 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 
-//import Join from './components/Join'
+import Curso from './components/Cursos'
 import Chat from './components/Chat'
 
 const App = ()=>(
   <Router>
     <Route path="/chat" exact component={Chat}/>
+    <Route path="/cursos" component={Curso}/>
   </Router>
 )
 

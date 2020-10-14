@@ -7,7 +7,7 @@ const addUsers = ({ id, name, room }) => {
     const existingUser = users.find((user) => user.room === room && user.name === name) //se verifica que el nombre de usuario para ingresar al chat no este ocupado
 
     if (existingUser) {
-        return { error: "Nombr de usuario no disponible" }
+        return { error: "Nombre de usuario no disponible" }
     }
 
     const user = { id, name, room }

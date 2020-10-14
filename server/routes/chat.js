@@ -6,4 +6,9 @@ router.route('/')
         res.send('server is up and runnig')
     })
 
+router.route('/cursos')
+    .get((req,res)=>{
+        res.send()
+    })
+
 module.exports = router; 
